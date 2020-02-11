@@ -77,6 +77,9 @@ struct buffer_info {
         if (view && ownview) { PyBuffer_Release(view); delete view; }
     }
 
+    bool is_contiguous(char order='C') {
+        return PyBuffer_IsContiguous(view, order) == 1;
+    }
 private:
     struct private_ctr_tag { };
 
