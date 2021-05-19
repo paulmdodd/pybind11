@@ -114,7 +114,7 @@ struct buffer_info {
     }
 
     bool is_contiguous(char order='C') {
-        return PyBuffer_IsContiguous(view, order) == 1;
+        return PyBuffer_IsContiguous(m_view, order) == 1;
     }
     
     Py_buffer *view() const { return m_view; }
