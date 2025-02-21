@@ -1,4 +1,5 @@
 # ruff: noqa: SIM201 SIM300 SIM202
+from __future__ import annotations
 
 import pytest
 
@@ -60,9 +61,7 @@ Members:
 
   ETwo : Docstring for ETwo
 
-  EThree : Docstring for EThree""".split(
-        "\n"
-    ):
+  EThree : Docstring for EThree""".split("\n"):
         assert docstring_line in m.UnscopedEnum.__doc__
 
     # Unscoped enums will accept ==/!= int comparisons
